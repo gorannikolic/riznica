@@ -104,7 +104,6 @@ Ext.define("riznica.search.view.SearchView", {
           ],listeners : {
           itemdblclick: function(grid, record) {
             if(this.up().xtype == "search-view-CustomerSearchView") {
-              debugger;
               var win = Ext.create("riznica.product.view.EditProductView" );
             } else {
               var win = Ext.create("riznica.product.view.EditProductView" );
