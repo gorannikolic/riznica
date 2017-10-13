@@ -5,6 +5,8 @@ import grails.plugin.grich.core.util.JJsonUtils
 import grails.plugin.grich.core.web.ConstrainedSessionLocaleResolver
 import hr.addiko.riznica.brand.Brand
 import hr.addiko.riznica.category.ProductCategory
+import hr.addiko.riznica.department.Department
+import hr.addiko.riznica.documentStatus.DocumentStatus
 import hr.addiko.riznica.product.Product
 import org.apache.commons.lang.LocaleUtils
 import grails.util.Environment
@@ -27,6 +29,9 @@ class BootStrap {
     createTestData()
     createBrandTestData()
     createProductTestData()
+    createDocumentStatusTestData()
+    createDepartmentTestData()
+
   }
 
   private createTestUser() {
@@ -83,6 +88,22 @@ class BootStrap {
     ProductCategory p3 = ProductCategory.findById(3)
     Brand b3 = Brand.findById(3)
     Product pr3 = new Product(name: "MX 007", price: 599, productCategory: p3, brand: b3, quantity: 3).save()
+  }
+  private createDocumentStatusTestData(){
+    DocumentStatus ds1 = new DocumentStatus(status: 'Inserted').save()
+    DocumentStatus ds2 = new DocumentStatus(status: 'Returned to Correction').save()
+    DocumentStatus ds3 = new DocumentStatus(status: 'Approved').save()
+    DocumentStatus ds4 = new DocumentStatus(status: 'Taken').save()
+    DocumentStatus ds5 = new DocumentStatus(status: 'Archived').save()
+  }
+  private createDepartmentTestData(){
+    Department dep1 = new Department(name: 'Payment System Department').save()
+    Department dep2 = new Department(name: 'Legal Entities Business Department').save()
+    Department dep3 = new Department(name: 'Information Technology Department').save()
+    Department dep4 = new Department(name: 'Finance and Accounting Department').save()
+    Department dep5 = new Department(name: 'Legal and General Affairs Department').save()
+    Department dep6 = new Department(name: 'Business Support and Tracking Department').save()
+    Department dep7 = new Department(name: 'Risk Management Department').save()
   }
 
   private importExtJsConfiguration() { 
