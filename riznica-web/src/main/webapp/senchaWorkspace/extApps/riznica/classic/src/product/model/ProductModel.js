@@ -7,7 +7,5 @@ Ext.define("riznica.product.model.ProductModel", {
     {name: 'productCategory', type: 'auto'},
     {name: 'brand', type: 'auto'},
     {name: 'quantity', type: 'auto'}
-
-
   ]
 });
