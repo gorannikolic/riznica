@@ -1,4 +1,4 @@
-Ext.define("riznica.registr.model.ProductModel", {
+Ext.define("riznica.registry.model.DocumentStatusModel", {
   extend: "Ext.data.Model",
 
   fields: [
