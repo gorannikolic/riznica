@@ -37,22 +37,26 @@ class BootStrap {
 
     def adminRole = new Role(authority: 'ROLE_ADMIN').save(flush: true, failOnError: true)
     def userRole = new Role(authority: 'ROLE_USER').save(flush: true, failOnError: true)
+    def approverRole = new Role(authority: 'ROLE_APPROVER').save(flush: true, failOnError: true)
+    def receiverRole = new Role(authority: 'ROLE_RECEIVER').save(flush: true, failOnError: true)
 
     switch (Environment.current) {
       case Environment.DEVELOPMENT:
         Department dep1 = Department.findById(1)
-        Department dep2 = Department.findById(3)
+        Department dep2 = Department.findById(2)
 
         def admin = new User(username: "admin", password: "admin", fullName:'Goran Nikolic', department: dep1, enabled: true).save(flush: true)
         UserRole.create(admin, adminRole).save(flush: true)
         UserRole.create(admin, userRole).save(flush: true)
 
-        def user = new User(username: "user", password: "user", fullName: 'Zoran Nikolic', department: dep2, enabled: true).save(flush: true)
+        def user = new User(username: "user", password: "user", fullName:'Zoran Nikolic', department: dep2, enabled: true).save(flush: true)
         UserRole.create(user, userRole).save(flush: true)
 
-        assert User.count() == 2
-        assert Role.count() == 2
-        assert UserRole.count() == 3
+        def approver = new User(username: "approver", password: "approver", fullName: 'Janis Atedukombo',department: dep2,enabled: true).save(flush: true)
+        UserRole.create(approver, approverRole).save(flush: true)
+
+        def receiver = new User(username: "receiver", password: "receiver", fullName: 'Djuro Ostojic',department: dep1,enabled: true).save(flush: true)
+        UserRole.create(receiver, receiverRole).save(flush: true)
 
         break
       case Environment.PRODUCTION:
