@@ -2,6 +2,7 @@ package hr.addiko.riznica
 
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
+import hr.addiko.riznica.department.Department
 
 @EqualsAndHashCode(includes='username')
 @ToString(includes='username', includeNames=true, includePackage=false)

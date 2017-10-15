@@ -25,13 +25,12 @@ class BootStrap {
  
     logApplicationStart()
 
+    createDepartmentTestData()
     createTestUser()
     createTestData()
     createBrandTestData()
     createProductTestData()
     createDocumentStatusTestData()
-    createDepartmentTestData()
-
   }
 
   private createTestUser() {
@@ -41,12 +40,14 @@ class BootStrap {
 
     switch (Environment.current) {
       case Environment.DEVELOPMENT:
+        Department dep1 = Department.findById(1)
+        Department dep2 = Department.findById(3)
 
-        def admin = new User(username: "admin", password: "admin", enabled: true).save(flush: true)
+        def admin = new User(username: "admin", password: "admin", fullName:'Goran Nikolic', department: dep1, enabled: true).save(flush: true)
         UserRole.create(admin, adminRole).save(flush: true)
         UserRole.create(admin, userRole).save(flush: true)
 
-        def user = new User(username: "user", password: "user", enabled: true).save(flush: true)
+        def user = new User(username: "user", password: "user", fullName: 'Zoran Nikolic', department: dep2, enabled: true).save(flush: true)
         UserRole.create(user, userRole).save(flush: true)
 
         assert User.count() == 2
