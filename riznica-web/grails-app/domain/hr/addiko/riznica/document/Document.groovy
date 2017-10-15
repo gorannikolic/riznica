@@ -2,6 +2,8 @@ package hr.addiko.riznica.document
 
 import hr.addiko.riznica.attachment.Attachment
 import hr.addiko.riznica.department.Department
+import hr.addiko.riznica.documentStatus.DocumentStatus
+import hr.addiko.riznica.documentType.DocumentType
 
 class Document implements Serializable {
 
@@ -14,6 +16,9 @@ class Document implements Serializable {
   Long receiverId
   String receiver
   String remark
+  DocumentType documentType
+  DocumentStatus documentStatus
+
   static hasMany = [ attachments : Attachment ]
 
   static constraints = {
@@ -26,7 +31,8 @@ class Document implements Serializable {
     receiverId nullable: true
     receiver nullable: true
     remark nullable: true
-    hasMany nullable: true
+    documentType nullable: true
+    documentStatus nullable: true
   }
 
 }
