@@ -10,5 +10,8 @@ class DocumentTypeController {
 
   DocumentTypeService documentTypeService
 
+  def searchAll(SimpleSearchCommand cmd) {
+    validateCallAndRender(cmd,{documentTypeService.searchAll(cmd)})
 
-}
+
+}}

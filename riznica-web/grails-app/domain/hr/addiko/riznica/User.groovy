@@ -1,11 +1,14 @@
 package hr.addiko.riznica
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
 import hr.addiko.riznica.department.Department
 
+
 @EqualsAndHashCode(includes='username')
 @ToString(includes='username', includeNames=true, includePackage=false)
+@JsonIgnoreProperties(["springSecurityService"])
 class User implements Serializable {
 
 	private static final long serialVersionUID = 1

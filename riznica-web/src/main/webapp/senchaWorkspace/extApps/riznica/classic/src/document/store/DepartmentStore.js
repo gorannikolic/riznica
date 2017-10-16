@@ -1,16 +1,15 @@
-Ext.define("riznica.registry.store.DepartmentStore", {
+Ext.define("riznica.document.store.DepartmentStore", {
   extend:'Ext.data.Store',
 
-  requires: ['riznica.registry.model.DepartmentModel'],
-  model: 'riznica.registry.model.DepartmentModel',
+  requires: ['riznica.document.model.DepartmentStoreModel'],
+  model: 'riznica.document.model.DepartmentStoreModel',
 
   autoLoad:true,
   storeId:'DepartmentStoreId',
-  pageSize: 10,
   proxy: {
     type: "ajax",
     api: {
-      read: riznica.configuration.contextPath + "/api/department/create"
+      read: riznica.configuration.contextPath + "/api/department/searchAll"
     },
     extraParams: {},
     reader: {
@@ -24,4 +23,5 @@ Ext.define("riznica.registry.store.DepartmentStore", {
     sortParam: "sortBy",
     directionParam: "sortDirection"
   }
+
 });

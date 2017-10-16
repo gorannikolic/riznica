@@ -9,6 +9,7 @@ Ext.define('riznica.main.store.TopLevelNavigationTreeStore', {
     config.root = {
       expanded: true,
       children: [
+        { text: 'Document', topLevelRouteId: 'riznica.document', iconCls: 'x-fa fa-bars', leaf: true, viewConfig: { xtype: 'document-view-DocumentView' } },
         // { text: 'Category', topLevelRouteId: 'riznica.category', iconCls: 'x-fa fa-bars', leaf: true, viewConfig: { xtype: 'category-view-CategoryView' } },
         // { text: 'Brand', topLevelRouteId: 'riznica.brand', iconCls: 'x-fa fa-copyright', leaf: true, viewConfig: { xtype: 'brand-view-BrandView' } },
         // { text: 'Product', topLevelRouteId: 'riznica.product', iconCls: 'x-fa fa-television', leaf: true, viewConfig: { xtype: 'product-view-ProductView' } },
