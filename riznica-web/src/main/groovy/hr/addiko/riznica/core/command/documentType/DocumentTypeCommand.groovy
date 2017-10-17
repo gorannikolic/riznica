@@ -4,11 +4,11 @@ import grails.validation.Validateable
 
 class DocumentTypeCommand implements Validateable{
 
-  String name
+  String type
 
   static constraints = {
 
-    name nullable: true
+    type nullable: true
   }
 
 }

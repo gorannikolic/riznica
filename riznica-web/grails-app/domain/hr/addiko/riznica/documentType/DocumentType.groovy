@@ -2,10 +2,10 @@ package hr.addiko.riznica.documentType
 
 class DocumentType implements Serializable {
 
-  String name
+  String type
 
   static constraints = {
-    name nullable: true
+    type nullable: true
   }
 
 }

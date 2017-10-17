@@ -62,7 +62,7 @@ Ext.define("riznica.document.view.DocumentView", {
       items:[
         {xtype:'textfield', fieldLabel:'Document Status', name:'documentStatus'},
         {xtype:'textfield', fieldLabel:'Document Number', name:'documentNumber'},
-        {xtype:'combobox', fieldLabel: 'Document Type',store: documentTypeStore, queryMode: 'remote', valueField: 'id', displayField: 'name', name: 'documentType' },
+        {xtype:'combobox', fieldLabel: 'Document Type',store: documentTypeStore, queryMode: 'remote', valueField: 'id', displayField: 'type', name: 'documentType' },
         {xtype:'combobox', fieldLabel: 'Department',store: departmentStore, queryMode: 'remote', valueField: 'id', displayField: 'name', name: 'department' },
         {xtype:'textfield', fieldLabel:'Sender', name:'sender'},
         {xtype:'combobox', fieldLabel: 'Approver',store: approverStore, queryMode: 'remote', valueField: 'id', displayField: 'fullName',name: 'approver' },

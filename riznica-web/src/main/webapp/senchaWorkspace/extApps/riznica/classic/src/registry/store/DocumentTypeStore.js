@@ -10,7 +10,7 @@ Ext.define("riznica.registry.store.DocumentTypeStore", {
   proxy: {
     type: "ajax",
     api: {
-      read: riznica.configuration.contextPath + "/api/registry/searchAll"
+      read: riznica.configuration.contextPath + "/api/documentType/searchAll"
     },
     extraParams: {},
     reader: {
