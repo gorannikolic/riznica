@@ -104,6 +104,7 @@ class BootStrap {
     DocumentStatus ds4 = new DocumentStatus(status: 'Approved').save()
     DocumentStatus ds5 = new DocumentStatus(status: 'Taken').save()
     DocumentStatus ds6 = new DocumentStatus(status: 'Archived').save()
+    DocumentStatus ds7 = new DocumentStatus(status: 'Canceled').save()
   }
   private createDepartmentTestData(){
     Department dep1 = new Department(name: 'Payment System Department').save()
@@ -115,11 +116,11 @@ class BootStrap {
     Department dep7 = new Department(name: 'Risk Management Department').save()
   }
   private createDocumentTypeTestData(){
-    DocumentType doct1 = new DocumentType(name: 'Transfers').save()
-    DocumentType doct2 = new DocumentType(name: 'Repo').save()
-    DocumentType doct3 = new DocumentType(name: 'Derivatives').save()
-    DocumentType doct4 = new DocumentType(name: 'Ref Lines').save()
-    DocumentType doct5 = new DocumentType(name: 'Other Orders').save()
+    DocumentType doct1 = new DocumentType(type: 'Transfers').save()
+    DocumentType doct2 = new DocumentType(type: 'Repo').save()
+    DocumentType doct3 = new DocumentType(type: 'Derivatives').save()
+    DocumentType doct4 = new DocumentType(type: 'Ref Lines').save()
+    DocumentType doct5 = new DocumentType(type: 'Other Orders').save()
   }
 
   private importExtJsConfiguration() { 
